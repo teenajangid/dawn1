@@ -186,12 +186,22 @@
             "link_label": "",
             "link": ""
           }
+        },
+        "7bfb66b4-3316-4977-ba98-8002da8c3134": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "column1",
         "column2",
-        "column3"
+        "column3",
+        "7bfb66b4-3316-4977-ba98-8002da8c3134"
       ],
       "settings": {
         "title": "",
@@ -210,20 +220,35 @@
         "padding_bottom": 36
       }
     },
-    "d7d4f4a6-9a80-4cfc-b196-d26b90aefa0c": {
+    "42c9de2d-11b4-4d00-be00-04f798a5275b": {
       "type": "section-one",
       "blocks": {
-        "template--15934608867516__d7d4f4a6-9a80-4cfc-b196-d26b90aefa0c-16714734613e9387a8-0": {
+        "template--15934608867516__42c9de2d-11b4-4d00-be00-04f798a5275b-16714734613e9387a8-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/banner_slidertimeless.jpg",
             "title": "Add a title or tagline",
-            "button_link": "#"
+            "button_link": ""
+          }
+        },
+        "89ff1df8-c36c-4bb1-936c-0c566e3c9af2": {
+          "type": "column",
+          "settings": {
+            "title": "Add a title or tagline",
+            "button_link": ""
+          }
+        },
+        "cf22d4f9-b81a-40c6-a2e7-6a35f7743d66": {
+          "type": "column",
+          "settings": {
+            "title": "Add a title or tagline",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "template--15934608867516__d7d4f4a6-9a80-4cfc-b196-d26b90aefa0c-16714734613e9387a8-0"
+        "template--15934608867516__42c9de2d-11b4-4d00-be00-04f798a5275b-16714734613e9387a8-0",
+        "89ff1df8-c36c-4bb1-936c-0c566e3c9af2",
+        "cf22d4f9-b81a-40c6-a2e7-6a35f7743d66"
       ],
       "settings": {
       }
@@ -236,6 +261,6 @@
     "collage",
     "video",
     "multicolumn",
-    "d7d4f4a6-9a80-4cfc-b196-d26b90aefa0c"
+    "42c9de2d-11b4-4d00-be00-04f798a5275b"
   ]
 }
