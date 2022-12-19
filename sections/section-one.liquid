@@ -1,8 +1,10 @@
 <style>
   .section_one img {
-     width: 100%;
-     max-width: 100%;
- }
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
   .section_one .details_text h3 {
      position: absolute;
      top: 86%;
@@ -11,6 +13,42 @@
    .section_one_colmn{
      position:relative;
    }
+   .section_one_colmn {
+    padding: 10px;
+}
+
+{% comment %} Custom CSS {% endcomment %}
+.section_one_colmn {
+  padding: 10px;
+}
+
+.details_text h3 {
+  /* position: absolute; */
+}
+
+.details_text {
+  position: absolute;
+  width: 100%;
+  top: 60%;
+  left: 10px;
+}
+
+.details_img {
+  height: 300px;
+}
+
+.details_img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.details-button {
+  position: absolute;
+  top: 80%;
+  z-index: 99;
+}
  </style>
  
  <div class="page-width section_one">
@@ -22,6 +60,7 @@
              <div class="details_img">
                <img src="{{ block.settings.image | img_url: 'master' }}" loading="lazy" height="100" width="100"/>
              </div>
+            
              <div class="details_text">
                 <h3>{{ block.settings.title }}</h3>
              </div>
