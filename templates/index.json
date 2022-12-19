@@ -224,6 +224,7 @@
         "3cd98fd0-9e49-4fb2-8f57-3f07e439ebc5": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/banner_slidertimeless.jpg",
             "title": "Add a title or tagline",
             "button_link": ""
           }
@@ -231,6 +232,7 @@
         "5468210e-77e6-4fe1-892a-b894705050f5": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/banner_slidertimeless.jpg",
             "title": "Add a title or tagline",
             "button_link": ""
           }
