@@ -186,12 +186,22 @@
             "link_label": "",
             "link": ""
           }
+        },
+        "7bfb66b4-3316-4977-ba98-8002da8c3134": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "column1",
         "column2",
-        "column3"
+        "column3",
+        "7bfb66b4-3316-4977-ba98-8002da8c3134"
       ],
       "settings": {
         "title": "",
@@ -209,42 +219,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "0f89629e-a709-4397-b076-1bd292952bd3": {
-      "type": "section-one",
-      "blocks": {
-        "template--15934608867516__0f89629e-a709-4397-b076-1bd292952bd3-1671470667d7e5fff4-0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/banner_slidertimeless.jpg",
-            "title": "Add a title or tagline",
-            "button_link": ""
-          }
-        },
-        "3cd98fd0-9e49-4fb2-8f57-3f07e439ebc5": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/banner_slidertimeless.jpg",
-            "title": "Add a title or tagline",
-            "button_link": ""
-          }
-        },
-        "5468210e-77e6-4fe1-892a-b894705050f5": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/banner_slidertimeless.jpg",
-            "title": "Add a title or tagline",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15934608867516__0f89629e-a709-4397-b076-1bd292952bd3-1671470667d7e5fff4-0",
-        "3cd98fd0-9e49-4fb2-8f57-3f07e439ebc5",
-        "5468210e-77e6-4fe1-892a-b894705050f5"
-      ],
-      "settings": {
-      }
     }
   },
   "order": [
@@ -253,7 +227,6 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn",
-    "0f89629e-a709-4397-b076-1bd292952bd3"
+    "multicolumn"
   ]
 }
