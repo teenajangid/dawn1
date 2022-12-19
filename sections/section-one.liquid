@@ -1,52 +1,96 @@
-<div class="page-width">
-  <div class="grid gap grid--3-col">
-     {% for block in section.blocks %}
-       {% if forloop.index == 2 or forloop.index == 5 or forloop.index == 8 %}
-      <div class="col-2">
-          2
-      </div>
-    {% else %}
-     <div class="col-4">
-          1
-      </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-</div>
-
-{% schema %}
-  {
-    "name": "section-one",
-    "settings": [],
-    "blocks":[
-      {
-        "type": "column",
-        "name":"block1",
-        "settings":[
-          {
-            "type": "text",
-            "id": "heading",
-            "default": "Heading",
-            "label": "Heading" 
-          }
-        ]
-      }
-    ],
-    "presets": [
-    {
-      "name": "section-one",
-      "blocks": [
-        {
-          "type": "column"
-        }
-      ]
-    }
-  ]
-  }
-{% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
+<style>
+  .section_one img {
+     width: 100%;
+     max-width: 100%;
+ }
+  .section_one .details_text h3 {
+     position: absolute;
+     top: 86%;
+     left: 4%;
+ }
+   .section_one_colmn{
+     position:relative;
+   }
+ </style>
+ 
+ <div class="page-width section_one">
+   <div class="grid gap grid--3-col">
+      {% for block in section.blocks %}
+        {% if forloop.index == 2 or forloop.index == 5 or forloop.index == 8 %}
+       <div class="col-2 section_one_colmn">
+         {% if block.type=="column" %}
+           <a href="{{ block.settings.button_link }}">
+             <div class="details_img">
+               <img src="{{ block.settings.image | img_url: 'master'}}">
+             </div>
+             <div class="details_text">
+                <h3>{{ block.settings.title }}</h3>
+             </div>
+          </a>
+        {% endif %}
+       </div>
+     {% else %}
+      <div class="col-4 section_one_colmn">
+            {% if block.type=="column" %}
+           <a href="{{ block.settings.button_link }}">
+             <div class="details_img">
+               <img src="{{ block.settings.image | img_url: 'master'}}">
+             </div>
+             <div class="details_text">
+                <h3>{{ block.settings.title }}</h3>
+             </div>
+          </a>
+        {% endif %}
+       </div>
+       {% endif %}
+     {% endfor %}
+   </div>
+ </div>
+ 
+ {% schema %}
+   {
+     "name": "section-one",
+     "settings": [],
+     "blocks":[
+       {
+         "type": "column",
+         "name":"block_one",
+         "limit":10,
+         "settings": [
+               {
+                 "type": "image_picker",
+                 "id": "image",
+                 "label": "Image"
+               },
+               {
+                 "type": "text",
+                 "id": "title",
+                 "label": "Heading",
+                 "default": "Add a title or tagline"
+               },
+                {
+                 "type": "url",
+                 "id": "button_link",
+                 "label": "Button link"
+               }
+         ]
+       }
+     ],
+     "presets": [
+     {
+       "name": "section-one",
+       "blocks": [
+         {
+           "type": "column"
+         }
+       ]
+     }
+   ]
+   }
+ {% endschema %}
+ 
+ {% stylesheet %}
+ {% endstylesheet %}
+ 
+ {% javascript %}
+ {% endjavascript %}
