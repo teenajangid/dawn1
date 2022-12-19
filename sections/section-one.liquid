@@ -3,11 +3,29 @@
      {% for block in section.blocks %}
        {% if forloop.index == 2 or forloop.index == 5 or forloop.index == 8 %}
       <div class="col-2">
-          2
+        {% if block.type=="img_block" %}
+          <a href="{{ block.settings.button_link }}">
+            <div class="details_img">
+              <img src="{{ block.settings.image | img_url: 'master'}}">
+            </div>
+            <div class="details_text">
+               <h3>{{ block.settings.title }}</h3>
+            </div>
+         </a>
+       {% endif %}
       </div>
     {% else %}
      <div class="col-4">
-          1
+           {% if block.type=="img_block" %}
+          <a href="{{ block.settings.button_link }}">
+            <div class="details_img">
+              <img src="{{ block.settings.image | img_url: 'master'}}">
+            </div>
+            <div class="details_text">
+               <h3>{{ block.settings.title }}</h3>
+            </div>
+         </a>
+       {% endif %}
       </div>
       {% endif %}
     {% endfor %}
@@ -21,14 +39,25 @@
     "blocks":[
       {
         "type": "column",
-        "name":"block1",
-        "settings":[
-          {
-            "type": "text",
-            "id": "heading",
-            "default": "Heading",
-            "label": "Heading" 
-          }
+        "name":"block_one",
+        "limit":10,
+        "settings": [
+              {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+              },
+              {
+                "type": "text",
+                "id": "title",
+                "label": "Heading",
+                "default": "Add a title or tagline"
+              },
+               {
+                "type": "url",
+                "id": "button_link",
+                "label": "Button link"
+              }
         ]
       }
     ],
