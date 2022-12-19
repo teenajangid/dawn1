@@ -219,39 +219,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "42c9de2d-11b4-4d00-be00-04f798a5275b": {
-      "type": "section-one",
-      "blocks": {
-        "template--15934608867516__42c9de2d-11b4-4d00-be00-04f798a5275b-16714734613e9387a8-0": {
-          "type": "column",
-          "settings": {
-            "title": "Add a title or tagline",
-            "button_link": ""
-          }
-        },
-        "89ff1df8-c36c-4bb1-936c-0c566e3c9af2": {
-          "type": "column",
-          "settings": {
-            "title": "Add a title or tagline",
-            "button_link": ""
-          }
-        },
-        "cf22d4f9-b81a-40c6-a2e7-6a35f7743d66": {
-          "type": "column",
-          "settings": {
-            "title": "Add a title or tagline",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15934608867516__42c9de2d-11b4-4d00-be00-04f798a5275b-16714734613e9387a8-0",
-        "89ff1df8-c36c-4bb1-936c-0c566e3c9af2",
-        "cf22d4f9-b81a-40c6-a2e7-6a35f7743d66"
-      ],
-      "settings": {
-      }
     }
   },
   "order": [
@@ -260,7 +227,6 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn",
-    "42c9de2d-11b4-4d00-be00-04f798a5275b"
+    "multicolumn"
   ]
 }
