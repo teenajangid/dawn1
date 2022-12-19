@@ -49,6 +49,29 @@
   top: 80%;
   z-index: 99;
 }
+
+.details-button a {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  width: fit-content;
+}
+
+.details-button a:after {
+    width: 0px;
+    height: 2px;
+    position: absolute;
+    content: "";
+    z-index: 999;
+    bottom: 0px;
+    left: 0px;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.details-button a:hover:after {
+    width: 100%;
+}
  </style>
  
  <div class="page-width section_one">
