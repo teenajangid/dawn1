@@ -216,19 +216,23 @@
         "template--15934608867516__0f89629e-a709-4397-b076-1bd292952bd3-1671470667d7e5fff4-0": {
           "type": "column",
           "settings": {
-            "heading": "Heading"
+            "image": "shopify:\/\/shop_images\/banner_slidertimeless.jpg",
+            "title": "Add a title or tagline",
+            "button_link": ""
           }
         },
         "3cd98fd0-9e49-4fb2-8f57-3f07e439ebc5": {
           "type": "column",
           "settings": {
-            "heading": "Heading"
+            "title": "Add a title or tagline",
+            "button_link": ""
           }
         },
         "5468210e-77e6-4fe1-892a-b894705050f5": {
           "type": "column",
           "settings": {
-            "heading": "Heading"
+            "title": "Add a title or tagline",
+            "button_link": ""
           }
         }
       },
