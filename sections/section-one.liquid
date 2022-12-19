@@ -3,7 +3,7 @@
      {% for block in section.blocks %}
        {% if forloop.index == 2 or forloop.index == 5 or forloop.index == 8 %}
       <div class="col-2">
-        {% if block.type=="img_block" %}
+        {% if block.type=="column" %}
           <a href="{{ block.settings.button_link }}">
             <div class="details_img">
               <img src="{{ block.settings.image | img_url: 'master'}}">
@@ -16,7 +16,7 @@
       </div>
     {% else %}
      <div class="col-4">
-           {% if block.type=="img_block" %}
+           {% if block.type=="column" %}
           <a href="{{ block.settings.button_link }}">
             <div class="details_img">
               <img src="{{ block.settings.image | img_url: 'master'}}">
