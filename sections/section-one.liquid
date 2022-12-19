@@ -21,7 +21,7 @@
          {% if block.type=="column" %}
            <a href="{{ block.settings.button_link }}">
              <div class="details_img">
-               <img src="{{ block.settings.image | img_url: 'master'}}">
+               <img src="{{ block.settings.image | image_url: 'master'}}" loading="lazy" height="100" width="100"/>
              </div>
              <div class="details_text">
                 <h3>{{ block.settings.title }}</h3>
@@ -34,7 +34,7 @@
             {% if block.type=="column" %}
            <a href="{{ block.settings.button_link }}">
              <div class="details_img">
-               <img src="{{ block.settings.image | img_url: 'master'}}">
+              <img src="{{ block.settings.image | image_url: 'master'}}" loading="lazy" height="100" width="100"/>
              </div>
              <div class="details_text">
                 <h3>{{ block.settings.title }}</h3>
