@@ -219,6 +219,42 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "d8fe87fb-c5ab-4c65-a6fd-80a5d795fd6c": {
+      "type": "section-one",
+      "blocks": {
+        "template--15934608867516__d8fe87fb-c5ab-4c65-a6fd-80a5d795fd6c-1671474538a3d3ded7-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner_slidertimeless.jpg",
+            "title": "Add a title or tagline",
+            "button_link": ""
+          }
+        },
+        "f0f5b9ce-7a6d-4e45-bb08-53ddfc572d6e": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner_slidertimeless.jpg",
+            "title": "Add a title or tagline",
+            "button_link": ""
+          }
+        },
+        "2a1bf8f3-f8f7-4eaf-acc3-16e49dc5a438": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner_slidertimeless.jpg",
+            "title": "Add a title or tagline",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15934608867516__d8fe87fb-c5ab-4c65-a6fd-80a5d795fd6c-1671474538a3d3ded7-0",
+        "f0f5b9ce-7a6d-4e45-bb08-53ddfc572d6e",
+        "2a1bf8f3-f8f7-4eaf-acc3-16e49dc5a438"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -227,6 +263,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "d8fe87fb-c5ab-4c65-a6fd-80a5d795fd6c"
   ]
 }
