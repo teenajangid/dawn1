@@ -144,8 +144,6 @@
             // Show or display:block by index number using active Class
             $(".heading-water-mark:nth-child("+elementIndex+")").addClass("active");
             
-            var bgColor = $(".left-section-two").css("background-color");
-            $(".heading-water-mark.active").css({"color": bgColor});
             
             // remove active-color from list
             {% for block in section.blocks %}
@@ -153,5 +151,8 @@
             {% endfor %}
             // change color by index number using active-color Class
             $(".left-section-two").addClass("left-section-color-"+elementIndex);
+            
+            var bgColor = $(".left-section-two").css("background-color");
+            $(".heading-water-mark.active").css({"color": bgColor});
         });
     </script>
