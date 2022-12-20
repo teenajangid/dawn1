@@ -1,4 +1,8 @@
 <style>
+    .grid_section_two{
+        display:flex;
+        flex-wrap: wrap;
+    }
     .left-section-two {
         width: 40%;
         display: flex;
@@ -30,7 +34,7 @@
     </style>
     <div class="main-section-two">
         <div class="side-text-section-two">Insipiration</div>
-        <div class="grid">
+        <div class="grid_section_two">
             <div class="left-section-two left-section-color-{{ forloop.index }}">
                 <ul>
                     {% for block in section.blocks %}
