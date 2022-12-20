@@ -138,11 +138,6 @@
             // Show or display:block by index number using active Class
             $(".right-section-two .image-section-two:nth-child("+elementIndex+")").addClass("active");
             
-            {% comment %} heading-water-mark {% endcomment %}
-            // hide or display:none all active image using active Class
-            $(".heading-water-mark").removeClass("active");
-            // Show or display:block by index number using active Class
-            $(".heading-water-mark:nth-child("+elementIndex+")").addClass("active");
             
             
             // remove active-color from list
@@ -154,5 +149,11 @@
             
             var bgColor = $(".left-section-two").css("background-color");
             $(".heading-water-mark.active").css({"color": bgColor});
+            
+            {% comment %} heading-water-mark {% endcomment %}
+            // hide or display:none all active image using active Class
+            $(".heading-water-mark").removeClass("active");
+            // Show or display:block by index number using active Class
+            $(".heading-water-mark:nth-child("+elementIndex+")").addClass("active");
         });
     </script>
