@@ -1,4 +1,14 @@
 <style>
+    .main-section-two {
+        position: relative;
+    }
+    .side-text-section-two {
+        position: absolute;
+        transform: rotate(90deg);
+        top: 60px;
+        color: #fff;
+        z-index: 1;
+    }
     .grid_section_two{
         display:flex;
         flex-wrap: wrap;
@@ -36,6 +46,10 @@
         <div class="side-text-section-two">Insipiration</div>
         <div class="grid_section_two">
             <div class="left-section-two left-section-color-{{ forloop.index }}">
+                {% for block in section.blocks %}
+                    <div class="heading-water-mark {% if forloop.index == 1 %}active{% endif %}">{{ block.settings.title }}</div>
+                {% endfor %}
+                
                 <ul>
                     {% for block in section.blocks %}
                     <li class="{% if forloop.index == 1 %}active{% endif %}" data-number="{{ forloop.index }}">
@@ -110,8 +124,13 @@
             // Show or display:block by index number using active Class
             $(".right-section-two .image-section-two:nth-child("+elementIndex+")").addClass("active");
             
-            // remove active-color from list
+            {% comment %} heading-water-mark {% endcomment %}
+            // hide or display:none all active image using active Class
+            $(".heading-water-mark").removeClass("active");
+            // Show or display:block by index number using active Class
+            $(".heading-water-mark:nth-child("+elementIndex+")").addClass("active");
             
+            // remove active-color from list
             {% for block in section.blocks %}
             $(".left-section-two").removeClass("left-section-color-{{ forloop.index }}");
             {% endfor %}
