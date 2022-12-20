@@ -1,5 +1,17 @@
-<style>
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
 
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- if section.settings.enable_quick_add -%}
+  <link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" media="print" onload="this.media='all'">
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'template-collection.css' | asset_url | stylesheet_tag }}</noscript>
+
+<style>
 /* Style the tab */
 .tab {
   overflow: hidden;
@@ -40,12 +52,12 @@
 
 <div class="tab">
   {% for block in section.blocks %}
-  <button class="tablinks" onclick="openCity(event, 'block-{{ forloop.index }}')">{{ block.settings.collection.title }}</button>
+    <button class="tablinks {% if forloop.index == 1 %}active{% endif %}" onclick="openBlocks(event, 'block-{{ forloop.index }}')">{{ block.settings.collection.title }}</button>
   {% endfor %}
 </div>
 
 {% for block in section.blocks %}
-<div id="block-{{ forloop.index }}" class="tabcontent">
+<div id="block-{{ forloop.index }}" class="tabcontent" {% if forloop.index == 1 %} style="display:block" {% endif %}>
   {%- for product in block.settings.collection.products limit: block.settings.products_to_show -%}
     {% render 'card-product',
       card_product: product,
@@ -53,7 +65,7 @@
       show_secondary_image: block.settings.show_secondary_image,
       show_vendor: block.settings.show_vendor,
       show_rating: block.settings.show_rating,
-      show_quick_add: block.settings.enable_quick_add,
+      show_quick_add: section.settings.enable_quick_add,
       section_id: block.id
     %}
   {% endfor %}
@@ -63,7 +75,14 @@
 {% schema %}
 {
   "name": "section-three",
-  "settings": [],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "default": false,
+      "label": "Quick Add to Cart"
+    }
+  ],
   "blocks":[
     {
       "type": "column",
@@ -122,12 +141,6 @@
           "default": false,
           "label": "t:sections.featured-collection.settings.show_rating.label",
           "info": "t:sections.featured-collection.settings.show_rating.info"
-        },
-        {
-          "type": "checkbox",
-          "id": "enable_quick_add",
-          "default": false,
-          "label": "t:sections.featured-collection.settings.enable_quick_buy.label"
         }
       ]
     }
@@ -146,17 +159,23 @@
 {% endschema %}
 
 <script>
-function openCity(evt, cityName) {
+function openBlocks(evt, block_id) {
   var i, tabcontent, tablinks;
+  {% comment %} display none all tab content {% endcomment %}
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
+
+  {% comment %} remove active class all tab {% endcomment %}
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-  document.getElementById(cityName).style.display = "block";
+  {% comment %} selected id display block of tab content {% endcomment %}
+  document.getElementById(block_id).style.display = "block";
+
+  {% comment %} selected tab add active class {% endcomment %}
   evt.currentTarget.className += " active";
 }
 </script>
