@@ -1,0 +1,120 @@
+<style>
+    .grid{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .left-section-two {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s;
+    }
+
+    .right-section-two {
+        width: 60%;
+    }
+
+    .image-section-two{
+        display: none;
+        transition: 0.5s;
+    }
+    .image-section-two.active {
+        display: flex;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+    
+    {% for block in section.blocks %}
+    .left-section-color-{{ forloop.index }}{
+        background-color: {{ block.settings.color_heading_section }};
+    }
+    {% endfor %}
+    </style>
+    <div class="main-section-two">
+        <div class="side-text-section-two">Insipiration</div>
+        <div class="grid">
+            <div class="left-section-two left-section-color-{{ forloop.index }}">
+                <ul>
+                    {% for block in section.blocks %}
+                    <li class="{% if forloop.index == 1 %}active{% endif %}" data-number="{{ forloop.index }}">
+                       <a href="{{ block.settings.button_link }}"> <h2>{{ block.settings.title }}/h2></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="right-section-two">
+                {% for block in section.blocks %}
+                    <img src="{{ block.settings.image | img_url: 'master'}}" width="100" height="100" class="image-section-two {% if forloop.index == 1 %}active{% endif %}">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% schema %}
+   {
+     "name": "section-two",
+     "settings": [],
+     "blocks":[
+       {
+         "type": "column",
+         "limit":3,
+         "settings": [
+               {
+                 "type": "image_picker",
+                 "id": "image",
+                 "label": "Image"
+               },
+               {
+                 "type": "color",
+                 "id": "color_heading_section",
+                 "label": "Heading section color",
+                 "default": "#FFFFFF"
+               },
+               {
+                 "type": "text",
+                 "id": "title",
+                 "label": "Heading",
+                 "default": "Add a title or tagline"
+               },
+                {
+                 "type": "url",
+                 "id": "button_link",
+                 "label": "Button link"
+               }
+         ]
+       }
+     ],
+     "presets": [
+     {
+       "name": "section-two",
+       "blocks": [
+         {
+           "type": "column"
+         }
+       ]
+     }
+   ]
+   }
+ {% endschema %}
+
+    <script>
+         $(".left-section-two ul li").hover((e)=>{
+            // get index of list item
+            var elementIndex = e.currentTarget.attributes["data-number"].value;
+            // hide or display:none all active image using active Class
+            $(".right-section-two .image-section-two").removeClass("active");
+            // Show or display:block by index number using active Class
+            $(".right-section-two .image-section-two:nth-child("+elementIndex+")").addClass("active");
+            
+            // remove active-color from list
+            
+            {% for block in section.blocks %}
+            $(".left-section-two").removeClass("left-section-color-{{ forloop.index }}");
+            {% endfor %}
+            // change color by index number using active-color Class
+            $(".left-section-two").addClass("left-section-color-"+elementIndex);
+        });
+    </script>
