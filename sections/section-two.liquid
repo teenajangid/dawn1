@@ -1,6 +1,7 @@
 <style>
     .main-section-two {
         position: relative;
+        overflow: hidden;
     }
     .side-text-section-two {
         position: absolute;
@@ -59,7 +60,7 @@
     <div class="main-section-two">
         <div class="side-text-section-two">Insipiration</div>
         <div class="grid_section_two">
-            <div class="left-section-two left-section-color-{{ forloop.index }}">
+            <div class="left-section-two left-section-color-1">
                 {% for block in section.blocks %}
                     <div class="heading-water-mark {% if forloop.index == 1 %}active{% endif %}">{{ block.settings.title }}</div>
                 {% endfor %}
@@ -149,7 +150,7 @@
             
             var bgColor = $(".left-section-two").css("background-color");
             $(".heading-water-mark.active").css({"color": bgColor});
-            
+
             {% comment %} heading-water-mark {% endcomment %}
             // hide or display:none all active image using active Class
             $(".heading-water-mark").removeClass("active");
