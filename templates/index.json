@@ -258,6 +258,45 @@
       ],
       "settings": {
       }
+    },
+    "c5f09623-c1fc-412d-aea2-1dc742659364": {
+      "type": "section-two",
+      "blocks": {
+        "template--15934608867516__c5f09623-c1fc-412d-aea2-1dc742659364-1671558893eb685150-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner_slidertimeless.jpg",
+            "color_heading_section": "#000000",
+            "title": "Add a title or tagline",
+            "button_link": ""
+          }
+        },
+        "22b26d4b-9a1b-44a5-8cf4-16bc8b73c1b0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/awesome-sauce-creative-iHOZTi2niV4-unsplash.jpg",
+            "color_heading_section": "#a12525",
+            "title": "gjgjhjh",
+            "button_link": ""
+          }
+        },
+        "72689c89-437a-4a3e-9cfd-060019865980": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/jan-kaufmann-eLNodw7pH0Y-unsplash.jpg",
+            "color_heading_section": "#513a3a",
+            "title": "jghjhj",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15934608867516__c5f09623-c1fc-412d-aea2-1dc742659364-1671558893eb685150-0",
+        "22b26d4b-9a1b-44a5-8cf4-16bc8b73c1b0",
+        "72689c89-437a-4a3e-9cfd-060019865980"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -267,6 +306,7 @@
     "collage",
     "video",
     "multicolumn",
-    "d8fe87fb-c5ab-4c65-a6fd-80a5d795fd6c"
+    "d8fe87fb-c5ab-4c65-a6fd-80a5d795fd6c",
+    "c5f09623-c1fc-412d-aea2-1dc742659364"
   ]
 }
