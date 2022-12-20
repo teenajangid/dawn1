@@ -58,17 +58,21 @@
 
 {% for block in section.blocks %}
 <div id="block-{{ forloop.index }}" class="tabcontent" {% if forloop.index == 1 %} style="display:block" {% endif %}>
-  {%- for product in block.settings.collection.products limit: block.settings.products_to_show -%}
-    {% render 'card-product',
-      card_product: product,
-      media_aspect_ratio: block.settings.image_ratio,
-      show_secondary_image: block.settings.show_secondary_image,
-      show_vendor: block.settings.show_vendor,
-      show_rating: block.settings.show_rating,
-      show_quick_add: section.settings.enable_quick_add,
-      section_id: block.id
-    %}
-  {% endfor %}
+  <div class="section-three-product-grid">
+    {%- for product in block.settings.collection.products limit: block.settings.products_to_show -%}
+      <div class="section-three-product-grid-product">
+        {% render 'card-product',
+          card_product: product,
+          media_aspect_ratio: block.settings.image_ratio,
+          show_secondary_image: block.settings.show_secondary_image,
+          show_vendor: block.settings.show_vendor,
+          show_rating: block.settings.show_rating,
+          show_quick_add: section.settings.enable_quick_add,
+          section_id: block.id
+        %}
+      </div>
+    {% endfor %}
+  </div>
 </div>
 {% endfor %}
 
