@@ -41,6 +41,20 @@
         background-color: {{ block.settings.color_heading_section }};
     }
     {% endfor %}
+    .heading-water-mark {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        left: -100px;
+        transform: rotate(90deg);
+        font-size: 120px;
+        top: 150px;
+        filter: brightness(0.9);
+    }
+    
+    .heading-water-mark.active {
+        display: block;
+    }
     </style>
     <div class="main-section-two">
         <div class="side-text-section-two">Insipiration</div>
@@ -129,6 +143,9 @@
             $(".heading-water-mark").removeClass("active");
             // Show or display:block by index number using active Class
             $(".heading-water-mark:nth-child("+elementIndex+")").addClass("active");
+            
+            var bgColor = $(".left-section-two").css("background-color");
+            $(".heading-water-mark.active").css({"color": bgColor});
             
             // remove active-color from list
             {% for block in section.blocks %}
