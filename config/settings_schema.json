@@ -11,6 +11,19 @@
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
+        "type": "color",
+        "id": "cursor_color",
+        "default": "#000",
+        "label": "Cursor color",
+        "info": "Add color for cursor"
+      },
+      {
+        "type": "checkbox",
+        "id": "cursor_design",
+        "default": false,
+        "label": "Change cursor"
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.colors.settings.header__1.content"
       },
