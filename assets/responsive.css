@@ -42,4 +42,31 @@
 
 
 
-  /*  */
+  /* After Before line & Circle  */
+  /* .image-with-text.image-with-text--no-overlap.page-width.isolate.collapse-corners.section-template--16037121097917__16b4480b-22dd-4653-9f01-11bbfefc03e7-padding:after {
+    content: "";
+    position: absolute;
+    top: 70%;
+    height: 1px;
+    background: #fff;
+    left: 9%;
+    width: 55%;
+    z-index: 99999;
+    transition: 2s;
+}
+.image-with-text.image-with-text--no-overlap.page-width.isolate.collapse-corners.section-template--16037121097917__16b4480b-22dd-4653-9f01-11bbfefc03e7-padding:before {
+    content: "";
+    position: absolute;
+    top: 67%;
+    height: 30px;
+    width: 30px;
+    background: #ffffff7d;
+    border: 1px solid #fff;
+    left: 9%;
+    z-index: 99999;
+    border-radius: 50%;
+    transition: 1.5s;
+}
+.image-with-text.image-with-text--no-overlap.page-width.isolate.collapse-corners.section-template--16037121097917__16b4480b-22dd-4653-9f01-11bbfefc03e7-padding:hover:before {
+  left: 63%
+} */
