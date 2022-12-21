@@ -72,7 +72,7 @@
 <div class="slideshow-container">
     {% for block in section.blocks %}
         <div class="mySlides" style="display:{% if forloop.index == 1 %}block{% else %}none{% endif %}">
-            <img src="{{ block.settings.image | img_url: 'master'}}" width="100" height="100" class="image-section-two {% if forloop.index == 1 %}active{% endif %}">
+           <div class="testimonial_img"> <img src="{{ block.settings.image | img_url: 'master'}}" width="100" height="100" class="image-section-two {% if forloop.index == 1 %}active{% endif %}"></div>
             <q>{{ block.settings.title }} </q>
             <p class="author">- {{ block.settings.author_title }}</p>
         </div>
