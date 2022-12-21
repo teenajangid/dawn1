@@ -15,7 +15,6 @@
 /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
 }
 
 /* Style the buttons inside the tab */
@@ -94,6 +93,7 @@ button.tablinks.active:after {
     top: 0;
     flex-direction: column;
     height: 100%;
+    top: 45px;
 }
 
 .tabcontent {
@@ -112,7 +112,7 @@ button.tablinks.active:after {
 }
 </style>
 
-<div class="tab_parent">
+<div class="tab_parent page-width">
 <div class="tab">
   {% for block in section.blocks %}
     <button class="tablinks {% if forloop.index == 1 %}active{% endif %}" onclick="openBlocks(event, 'block-{{ forloop.index }}')">{{ block.settings.collection.title }}</button>
