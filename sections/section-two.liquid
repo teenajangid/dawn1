@@ -1,160 +1,286 @@
 <style>
-    .main-section-two {
-        position: relative;
-        overflow: hidden;
-    }
-    .side-text-section-two {
-        position: absolute;
-        transform: rotate(90deg);
-        top: 60px;
-        color: #fff;
-        z-index: 1;
-    }
-    .grid_section_two{
-        display:flex;
-        flex-wrap: wrap;
-    }
-    .left-section-two {
-        width: 40%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.5s;
-    }
+  .main-section-two {
+      position: relative;
+      overflow: hidden;
+  }
+  .side-text-section-two {
+      position: absolute;
+      transform: rotate(90deg);
+      top: 60px;
+      color: #fff;
+      z-index: 1;
+  }
+  .grid_section_two{
+      display:flex;
+      flex-wrap: wrap;
+  }
+  .left-section-two {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.5s;
+    flex-direction: column;
+  }
 
-    .right-section-two {
-        width: 60%;
-    }
+  .right-section-two {
+      width: 60%;
+  }
 
-    .image-section-two{
-        display: none;
-        transition: 0.5s;
-    }
-    .image-section-two.active {
-        display: flex;
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-    }
-    
-    {% for block in section.blocks %}
-    .left-section-color-{{ forloop.index }}{
-        background-color: {{ block.settings.color_heading_section }};
-    }
-    {% endfor %}
-    .heading-water-mark {
-        display: none;
-        position: absolute;
-        z-index: 1;
-        left: -100px;
-        transform: rotate(90deg);
-        font-size: 120px;
-        top: 150px;
-        filter: brightness(0.9);
-    }
-    
-    .heading-water-mark.active {
-        display: block;
-    }
-    </style>
-    <div class="main-section-two">
-        <div class="side-text-section-two">Insipiration</div>
-        <div class="grid_section_two">
-            <div class="left-section-two left-section-color-1">
-                {% for block in section.blocks %}
-                    <div class="heading-water-mark {% if forloop.index == 1 %}active{% endif %}">{{ block.settings.title }}</div>
-                {% endfor %}
-                
-                <ul>
-                    {% for block in section.blocks %}
-                    <li class="{% if forloop.index == 1 %}active{% endif %}" data-number="{{ forloop.index }}">
-                       <a href="{{ block.settings.button_link }}"> <h2>{{ block.settings.title }}</h2></a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
+  .image-section-two{
+      display: none;
+      transition: 0.5s;
+  }
+  .image-section-two.active {
+      display: flex;
+      width: 100%;
+      height: 640px;
+      object-fit: cover;
+  }
+  
+  {% for block in section.blocks %}
+  .left-section-color-{{ forloop.index }}{
+      background-color: {{ block.settings.color_heading_section }};
+  }
+  {% endfor %}
+  .heading-water-mark {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      left: -170px;
+      transform: rotate(90deg);
+      font-size: 90px;
+      top: 48%;
+      opacity: .1!important;
+      color: #fff!important;
+  }
+  
+  .heading-water-mark.active {
+      display: block;
+  }
+.heading-water-mark.active {
+  color: #fff;
+  opacity: .1;
+}
+.grid_section_two ul {
+  position: relative;
+  z-index: 2;
+}
+.left-section-two {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.btnn {
+  margin-top: 26px;
+  margin-left: -108px;
+}
+.btnn a {
+  background: #fff;
+  padding: 12px 50px;
+  text-decoration: none;
+}
+.left-section-two a {
+  text-decoration: none;
+}
+.left-section-two li {
+  list-style: none;
+}
+.grid_section_two h3 {
+  font-size: 30px;
+  color: #fff!important;
+}
+li:hover h3 {
+  color: #fff!important;
+  font-weight: 500;
+}
+.grid_section_two h3 {
+  font-size: 30px;
+  color: #fff!important;
+  transition: .4s all;
+}
+.left-section-two li h3 {
+  position: relative;
+  width: fit-content;
+}
 
-            <div class="right-section-two">
-                {% for block in section.blocks %}
-                    <img src="{{ block.settings.image | img_url: 'master'}}" width="100" height="100" class="image-section-two {% if forloop.index == 1 %}active{% endif %}">
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+.left-section-two li:hover h3:after {
+  width: 100%;
+}
+.grid_section_two h3:after {
+  width: 0px;
+  height: 2px;
+  position: absolute;
+  content: "";
+  z-index: 999;
+  bottom: 0px;
+  left: 0px;
+  background: #fff;
+  transition: 0.6s;
+}
+ @media(max-width:768px){
+  .heading-water-mark.active {
+  display: none!important;
+}
 
-    {% schema %}
-   {
-     "name": "section-two",
-     "settings": [],
-     "blocks":[
-       {
-         "type": "column",
-         "name":"column images text",
-         "limit":3,
-         "settings": [
-               {
-                 "type": "image_picker",
-                 "id": "image",
-                 "label": "Image"
-               },
-               {
-                 "type": "color",
-                 "id": "color_heading_section",
-                 "label": "Heading section color",
-                 "default": "#FFFFFF"
-               },
-               {
-                 "type": "text",
-                 "id": "title",
-                 "label": "Heading",
-                 "default": "Add a title or tagline"
-               },
-                {
-                 "type": "url",
-                 "id": "button_link",
-                 "label": "Button link"
-               }
-         ]
-       }
-     ],
-     "presets": [
+  .left-section-two {
+  width: 100%;
+  height: 300px;
+
+  }
+  .right-section-two {
+  width: 100%;
+}
+   .grid_section_two h3 {
+  font-size: 20px!important;
+  color: #fff!important;
+  transition: .4s all;
+}
+.image-section-two.active {
+  display: flex;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+   .btnn {
+  margin-top: 0px;
+  margin-left: 0px;
+}
+}
+  </style>
+  <div class="main-section-two">
+      <div class="side-text-section-two"> ⇀ Our Collections</div>
+   
+      <div class="grid_section_two">
+          <div class="left-section-two left-section-color-1">
+              {% for block in section.blocks %}
+                  <div class="heading-water-mark {% if forloop.index == 1 %}active{% endif %}">{{ block.settings.title1 }}</div>
+              {% endfor %}
+              
+              <ul>
+                  {% for block in section.blocks %}
+                  <li class="{% if forloop.index == 1 %}active{% endif %}" data-number="{{ forloop.index }}">
+                     <a href="{{ block.settings.button_link }}"> <h3>{{ block.settings.title }}</h3></a>
+                  </li>
+                  {% endfor %}
+              </ul>
+             <div class="btnn"><a href="https://genuwinecellars.shop/products/wine-guardian-d200-ducted-cap-8500ft3">Shop Products</a></div>
+          </div>
+        
+
+          <div class="right-section-two">
+              {% for block in section.blocks %}
+                  <img src="{{ block.settings.image | img_url: 'master'}}" width="100" height="100" class="image-section-two {% if forloop.index == 1 %}active{% endif %}">
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+
+  {% schema %}
+ {
+   "name": "New section",
+   "settings": [],
+   "blocks":[
      {
-       "name": "section-two",
-       "blocks": [
-         {
-           "type": "column"
-         }
+       "type": "column",
+       "name":"column images text",
+       "limit":3,
+       "settings": [
+             {
+               "type": "image_picker",
+               "id": "image",
+               "label": "Image"
+             },
+             {
+               "type": "color",
+               "id": "color_heading_section",
+               "label": "Heading section color",
+               "default": "#FFFFFF"
+             },
+             {
+               "type": "text",
+               "id": "title",
+               "label": "Heading",
+               "default": "Add a title or tagline"
+             },
+            {
+               "type": "text",
+               "id": "title1",
+               "label": "water mark Heading",
+               "default": "Add a title or tagline"
+             },
+              {
+               "type": "url",
+               "id": "button_link",
+               "label": "Button link"
+             },
+          {
+               "type": "url",
+               "id": "button_link1",
+               "label": "Button link"
+             },
+          {
+               "type": "text",
+               "id": "button_text1",
+               "label": "button text",
+               "default": "Shop Products"
+             }
        ]
      }
-   ]
+   ],
+   "presets": [
+   {
+     "name": "New section",
+     "blocks": [
+       {
+         "type": "column"
+       }
+     ]
    }
- {% endschema %}
+ ]
+ }
+{% endschema %}
 
-    <script>
-         $(".left-section-two ul li").hover((e)=>{
-            // get index of list item
-            var elementIndex = e.currentTarget.attributes["data-number"].value;
-            // hide or display:none all active image using active Class
-            $(".right-section-two .image-section-two").removeClass("active");
-            // Show or display:block by index number using active Class
-            $(".right-section-two .image-section-two:nth-child("+elementIndex+")").addClass("active");
-            
-            
-            
-            // remove active-color from list
-            {% for block in section.blocks %}
-            $(".left-section-two").removeClass("left-section-color-{{ forloop.index }}");
-            {% endfor %}
-            // change color by index number using active-color Class
-            $(".left-section-two").addClass("left-section-color-"+elementIndex);
-            
-            var bgColor = $(".left-section-two").css("background-color");
-            $(".heading-water-mark.active").css({"color": bgColor});
+  <script>
+       $(".left-section-two ul li").hover((e)=>{
+          var elementIndex = e.currentTarget.attributes["data-number"].value;
+          $(".right-section-two .image-section-two").removeClass("active");
+          $(".right-section-two .image-section-two:nth-child("+elementIndex+")").addClass("active");
+          
+          
+          {% for block in section.blocks %}
+          $(".left-section-two").removeClass("left-section-color-{{ forloop.index }}");
+          {% endfor %}
+          $(".left-section-two").addClass("left-section-color-"+elementIndex);
+          
+          var bgColor = $(".left-section-two").css("background-color");
+          $(".heading-water-mark.active").css({"color": bgColor});
 
-            {% comment %} heading-water-mark {% endcomment %}
-            // hide or display:none all active image using active Class
-            $(".heading-water-mark").removeClass("active");
-            // Show or display:block by index number using active Class
-            $(".heading-water-mark:nth-child("+elementIndex+")").addClass("active");
-        });
-    </script>
+          {% comment %} heading-water-mark {% endcomment %}
+          $(".heading-water-mark").removeClass("active");
+          $(".heading-water-mark:nth-child("+elementIndex+")").addClass("active");
+      });
+  </script>
+   <script>
+       $(".left-section-two ul li").click((e)=>{
+          var elementIndex = e.currentTarget.attributes["data-number"].value;
+          $(".right-section-two .image-section-two").removeClass("active");
+          $(".right-section-two .image-section-two:nth-child("+elementIndex+")").addClass("active");
+          
+          
+          {% for block in section.blocks %}
+          $(".left-section-two").removeClass("left-section-color-{{ forloop.index }}");
+          {% endfor %}
+          $(".left-section-two").addClass("left-section-color-"+elementIndex);
+          
+          var bgColor = $(".left-section-two").css("background-color");
+          $(".heading-water-mark.active").css({"color": bgColor});
+
+          {% comment %} heading-water-mark {% endcomment %}
+          $(".heading-water-mark").removeClass("active");
+          $(".heading-water-mark:nth-child("+elementIndex+")").addClass("active");
+      });
+  </script>
