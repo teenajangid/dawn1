@@ -16,7 +16,6 @@
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
-  background-color: #f1f1f1;
 }
 
 /* Style the buttons inside the tab */
@@ -34,14 +33,9 @@
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
+
 
 /* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
 
 /* Style the tab content */
 .tabcontent {
@@ -91,8 +85,30 @@ button.tablinks.active:after {
   background: #a46e3b;
   transition: 0.5s;
 }
+
+@media(max-width:768px){
+  .tab {
+    display: flex;
+    width: 40%;
+    position: sticky;
+    top: 0;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tabcontent {
+    width: 60%;
+    height: 100%;
+}
+
+.tab_parent {
+    display: flex;
+    position: relative;
+}
+}
 </style>
 
+<div class="tab_parent">
 <div class="tab">
   {% for block in section.blocks %}
     <button class="tablinks {% if forloop.index == 1 %}active{% endif %}" onclick="openBlocks(event, 'block-{{ forloop.index }}')">{{ block.settings.collection.title }}</button>
@@ -118,6 +134,7 @@ button.tablinks.active:after {
   </div>
 </div>
 {% endfor %}
+</div>
 
 {% schema %}
 {
