@@ -71,7 +71,7 @@
 </style>
 <div class="slideshow-container">
     {% for block in section.blocks %}
-        <div class="mySlides">
+        <div class="mySlides" style="display:{% if forloop.index == 1 %}block{% else %}none{% endif %}">
             <img src="{{ block.settings.image | img_url: 'master'}}" width="100" height="100" class="image-section-two {% if forloop.index == 1 %}active{% endif %}">
             <q>{{ block.settings.title }} </q>
             <p class="author">- {{ block.settings.author_title }}</p>
@@ -84,7 +84,7 @@
 
 <div class="dot-container">
     {% for block in section.blocks %}
-        <span class="dot" onclick="currentSlide({{ forloop.index }})"></span>
+        <span class="dot {% if forloop.index == 1 %}active{% else %}{% endif %}" onclick="currentSlide({{ forloop.index }})"></span>
     {% endfor %}
 </div>
 
@@ -144,7 +144,7 @@
   }
 
     setInterval(()=>{
-        showSlides(1);
+        showSlides((slideIndex += 1));
     }, 2000)
 
   function showSlides(n) {
