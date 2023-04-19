@@ -240,7 +240,7 @@
     <script src="{{ 'jquery.min.js' | asset_url }}"></script>
   </head>
 
-  <body class="gradient">
+  <body class="gradient {% if template == '404' %}error-404{% else %}{{ template | replace: '.', '-' | handle }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -251,7 +251,7 @@
 
     {% section 'announcement-bar' %}
     {% section 'header' %}
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <main id="MainContent" class="content-for-layout focus-none {% if template == 'index' %}home{% elsif template == 'page' %}{{ page.handle }}{% elsif template == 'collection' %}{{ collection.handle }}{% elsif template == 'product' %}{{ product.handle }}{% elsif template contains "contact" %}contact{% endif %}" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 

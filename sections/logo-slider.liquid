@@ -1,0 +1,99 @@
+<style>
+    .slideerr img {
+    width: 150px;
+    height: 100px;
+      filter: opacity(0.6);
+  }
+     .slideerr img:hover {
+        filter: opacity(1);
+     }
+    .marquee {
+    position: relative;
+      height: 150px;
+      display: flex;
+      overflow-x: hidden;
+      align-items: center;
+  }
+  
+  .track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 60s linear infinite;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+  }
+  
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-25%); }
+  }
+    div#shopify-section-template--16037121097917__275d16dd-1367-45d7-b555-15bb77454b09 {
+     
+      padding-top: 40px;
+      margin-top: 45px;
+  }
+  
+  
+    </style>
+  
+  <div class="slideerr">
+   <div class="marquee">
+    <div class="track">
+       {%  for block in section.blocks %}
+      <div class="content"><img src="{{ block.settings.image | img_url: 'master'}}"></div>
+      {% endfor %}
+       {%  for block in section.blocks %}
+      <div class="content"><img src="{{ block.settings.image | img_url: 'master'}}"></div>
+      {% endfor %}
+       {%  for block in section.blocks %}
+      <div class="content"><img src="{{ block.settings.image | img_url: 'master'}}"></div>
+      {% endfor %}
+       {%  for block in section.blocks %}
+      <div class="content"><img src="{{ block.settings.image | img_url: 'master'}}"></div>
+      {% endfor %}
+       {%  for block in section.blocks %}
+      <div class="content"><img src="{{ block.settings.image | img_url: 'master'}}"></div>
+      {% endfor %}
+       {%  for block in section.blocks %}
+      <div class="content"><img src="{{ block.settings.image | img_url: 'master'}}"></div>
+      {% endfor %}
+    </div>
+  </div>        
+    </div>
+  
+  
+  
+  
+  {% schema %}
+   {
+       "name": "logo-slider",
+       "settings": [],
+       "blocks":[
+         {
+           "type": "column",
+           "name":"column logo",
+           "limit":30,
+           "settings": [
+                 {
+                   "type": "image_picker",
+                   "id": "image",
+                   "label": "Image"
+                 }
+           ]
+         }
+       ],
+       "presets": [
+       {
+         "name": "logo-slider",
+         "blocks": [
+           {
+             "type": "column"
+           }
+         ]
+       }
+     ]
+     }
+   {% endschema %}
+  
